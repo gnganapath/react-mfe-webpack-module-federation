@@ -1,0 +1,50 @@
+Steps:
+create Root and Remote app using npx create-react ( webpack module federation architecture)
+step:1
+======
+npx create-react-app react-host
+npx create-react-app reaCT-remote
+
+validate both app is running in local with plain react app component
+
+
+
+step:2
+======
+we have 2 apps
+react-host - parent app
+reaCT-remote - child app
+Dependencies for webpack config
+Within each host/ and remote/ run:
+
+npm install --save-dev webpack webpack-cli html-webpack-plugin webpack-dev-server babel-loader
+
+create a new webpack.config.js file at the root of host/
+
+we need a new start script ->  
+"scripts":{
+    "start": "webpack serve"
+  }
+
+  at index.js
+
+  change index.js into bootstrap.js
+
+  importing another file bootstrap.js that renders the React app
+
+  Spte:3
+Add Module Federation
+  webpack.config.js
+
+
+  Spte:4 
+  Configure remot app
+  create -> remote/webpack.config.js
+
+  Combining these will allow our host to find the remote code at Remote@http://localhost:4000/moduleEntry.js
+
+  index.js to bootstrap.js 
+
+https://github.com/gnganapath/react-mfe-webpack-module-federation
+
+reference from   https://github.com/gnganapath/micro-frontend-demo

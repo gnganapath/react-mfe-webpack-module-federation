@@ -1,18 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+// remote/src/App.js
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">      
-        <p>
-          React child app - Remote app
-        </p>
-        
-        
-      </header>
-    </div>
-  );
-}
-
+export const App = () => {
+  return <div>Hello from the other side</div>;
+};
 export default App;
